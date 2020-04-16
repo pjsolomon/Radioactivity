@@ -15,7 +15,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var frequencyField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     
-    var item: Item!
+    var item: Item! {
+        didSet {
+            navigationItem.title = item.name
+        }
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -27,7 +31,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         
         nameField.text = item.name
         locationField.text = item.location
-        frequencyField.text = "\(item.frequency) FM"
+        frequencyField.text = item.frequency
         dateLabel.text = "\(item.dateCreated)"
     }
     
@@ -36,5 +40,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         // "Save" changes to item
         item.name = nameField.text ?? ""
         item.location = locationField.text
+        item.frequency = frequencyField.text ?? "0.0"
     }
 }

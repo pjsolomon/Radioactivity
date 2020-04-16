@@ -7,54 +7,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Items View Controller-->
+        <!--Radioactivity-->
         <scene sceneID="rqg-94-nJP">
             <objects>
                 <tableViewController id="3Oi-rx-h8q" customClass="ItemsViewController" customModule="Radioactivity" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQS-c4-jZp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="0De-jS-r04">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZA-7h-Lu1">
-                                    <rect key="frame" x="20" y="7" width="34" height="36"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <state key="normal" title="Edit"/>
-                                    <connections>
-                                        <action selector="toggleEditingMode:" destination="3Oi-rx-h8q" eventType="touchDown" id="pgo-kp-f78"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radioactivity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psq-2b-gWd">
-                                    <rect key="frame" x="151" y="13" width="112.5" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDx-nR-eb7">
-                                    <rect key="frame" x="364" y="1" width="30" height="48"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                    <state key="normal" title="+"/>
-                                    <connections>
-                                        <action selector="addNewItem:" destination="3Oi-rx-h8q" eventType="touchDown" id="la8-ss-aPk"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <constraints>
-                                <constraint firstItem="Psq-2b-gWd" firstAttribute="centerY" secondItem="0De-jS-r04" secondAttribute="centerY" id="DeQ-5R-JC8"/>
-                                <constraint firstItem="xZA-7h-Lu1" firstAttribute="centerY" secondItem="0De-jS-r04" secondAttribute="centerY" id="FC1-jW-YrF"/>
-                                <constraint firstItem="xZA-7h-Lu1" firstAttribute="leading" secondItem="0De-jS-r04" secondAttribute="leading" constant="20" id="OZ7-vc-ZAt"/>
-                                <constraint firstAttribute="trailing" secondItem="tDx-nR-eb7" secondAttribute="trailing" constant="20" id="VNJ-5z-lcM"/>
-                                <constraint firstItem="tDx-nR-eb7" firstAttribute="centerY" secondItem="0De-jS-r04" secondAttribute="centerY" id="cBn-dj-OyR"/>
-                                <constraint firstItem="Psq-2b-gWd" firstAttribute="centerX" secondItem="0De-jS-r04" secondAttribute="centerX" id="xEC-Ve-ya3"/>
-                            </constraints>
-                        </view>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="60" id="sgm-iB-pf4" customClass="ItemCell" customModule="Radioactivity" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="78" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sgm-iB-pf4" id="DVN-AT-f7d">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -101,7 +64,13 @@
                             <outlet property="delegate" destination="3Oi-rx-h8q" id="DHa-of-RJv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ZYg-9U-zGI"/>
+                    <navigationItem key="navigationItem" title="Radioactivity" id="ZYg-9U-zGI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nr5-7X-TGu">
+                            <connections>
+                                <action selector="addNewItem:" destination="3Oi-rx-h8q" id="yu8-TW-hLa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nm4-tB-Tew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +137,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4W-R5-Uqi">
                                                 <rect key="frame" x="98" y="0.0" width="316" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="B5h-2i-1jA" id="8x7-A4-LEq"/>
                                                 </connections>
@@ -188,7 +157,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ewc-h7-G5v" firstAttribute="bottom" secondItem="rcK-pM-wfs" secondAttribute="bottom" constant="8" id="Rbb-hK-vCV"/>
                             <constraint firstItem="rcK-pM-wfs" firstAttribute="trailing" secondItem="Ewc-h7-G5v" secondAttribute="trailing" id="sPO-Hw-Ush"/>
